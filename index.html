@@ -27,166 +27,160 @@
 
     <main>
         <section id="planificador">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-12 col-lg-6">
-                        <article class="tarjeta tarjeta-form py-4 px-4">
-                            <fieldset class="bloque-form py-2">
-                                <legend class="titulo-bloque">Nueva tarea</legend>
-                                <div class="row g-3">
-                                    <div class="col-12">
-                                        <label class="etiqueta-form" for="nombre">Nombre</label>
-                                        <input class="campo form-control" type="text" id="nombre" name="nombre"
-                                            placeholder="Tu nombre" required />
-                                    </div>
-
-                                    <div class="col-12">
-                                        <label class="etiqueta-form" for="descripcion">Descripción</label>
-                                        <input class="campo form-control" type="text" id="descripcion"
-                                            name="descripcion" placeholder="Contenido de la tarea" />
-                                    </div>
-
-                                    <div class="col-12">
-                                        <label class="etiqueta-form" for="email">Limite de realización</label>
-                                        <input class="campo form-control" type="number" id="limite" name="limite"
-                                            placeholder="Fecha de entrega de la tarea" required />
-                                    </div>
+            <div class="row g-4">
+                <div class="col-12 col-lg-6">
+                    <article class="tarjeta tarjeta-form py-4 px-4">
+                        <fieldset class="bloque-form py-2">
+                            <legend class="titulo-bloque">Nueva tarea</legend>
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label class="etiqueta-form" for="nombre">Nombre</label>
+                                    <input class="campo form-control" type="text" id="nombre" name="nombre"
+                                        placeholder="Tu nombre" required />
                                 </div>
-                            </fieldset>
 
-                            <button class="boton-agregar" type="submit">Agregar tarea</button>
-                        </article>
+                                <div class="col-12">
+                                    <label class="etiqueta-form" for="descripcion">Descripción</label>
+                                    <input class="campo form-control" type="text" id="descripcion" name="descripcion"
+                                        placeholder="Contenido de la tarea" />
+                                </div>
 
-                        <article class="container h-100">
-                            <div class="container">
-                                <div class="col-12 col-lg-6">
-                                    <h4>Tareas finalizadas</h4>
-                                    <ul class="terminadas">
-                                        <li class="f1">1 Tarea finalizada</li>
-                                        <li class="f2">2 Tarea finalizada</li>
-                                        <li class="f3">3 Tarea finalizada</li>
+                                <div class="col-12">
+                                    <label class="etiqueta-form" for="email">Limite de realización</label>
+                                    <input class="campo form-control" type="number" id="limite" name="limite"
+                                        placeholder="Fecha de entrega de la tarea" required />
+                                </div>
+                            </div>
+                        </fieldset>
+
+                        <button class="boton-agregar" type="submit">Agregar tarea</button>
+                    </article>
+
+                    <article class="container h-100">
+                        <div class="container">
+                            <div class="col-12 col-lg-6">
+                                <h4>Tareas finalizadas</h4>
+                                <ul class="terminadas">
+                                    <li class="f1">1 Tarea finalizada</li>
+                                    <li class="f2">2 Tarea finalizada</li>
+                                    <li class="f3">3 Tarea finalizada</li>
                                     <li class="f4">4 Tarea finalizada</li>
                                 </ul>
                             </div>
-                        </article>
-                    </div>
+                    </article>
+                </div>
 
-                    <div class="col-12 col-lg-6 py-4 px-5">
-                        <div class="container bg-dark text-light rounded-4 pb-5">
-                            <h4 class="mb-3 py-3">Lista de tareas vigentes</h4>
-                            <div class="row g-4 align-items-center mb-3">
-                                <div class="col-12 col-md-8">
-                                    <div class="card">
-                                        <h5 class="card-header">Tarea 1</h5>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Comprar el mercado</h5>
-                                            <p class="card-text">Descripción: No olvidar comprar las verduras y las proteinas para la semana.<br>
-                                                Límite de realización: 07/11/2026.<br>
-                                                Estado: Pendiente
-                                            </p>
-                                        </div>
+                <div class="col-12 col-lg-6 py-4 px-5">
+                    <div class="container bg-dark text-light rounded-4 pb-5">
+                        <h4 class="mb-3 py-3">Lista de tareas vigentes</h4>
+                        <div class="row g-4 align-items-center mb-3">
+                            <div class="col-12 col-md-8">
+                                <div class="card">
+                                    <h5 class="card-header">Tarea 1</h5>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Comprar el mercado</h5>
+                                        <p class="card-text">Descripción: No olvidar comprar las verduras y las proteinas para la semana.<br>
+                                            Límite de realización: 07/11/2026.<br>
+                                            Estado: Pendiente
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-2">
-                                    <button class="btn btn-success w-100" type="button">Finalizada</button>
-                                </div>
-                                <div class="col-6 col-md-2">
-                                    <button class="btn btn-danger w-100" type="button">Eliminar</button>
-                                </div>
                             </div>
-
-                            <div class="row g-4 align-items-center mb-3">
-                                <div class="col-12 col-md-8">
-                                    <div class="card">
-                                        <h5 class="card-header">Tarea 2</h5>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Pagar los servicios públicos</h5>
-                                            <p class="card-text">Descripción: Realizar el pago de la luz, el agua y el gas antes de la fecha de corte.<br>
-                                                Límite de realización: 10/11/2026.<br>
-                                                Estado: En proceso
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-2">
-                                    <button class="btn btn-success w-100" type="button">Finalizada</button>
-                                </div>
-                                <div class="col-6 col-md-2">
-                                    <button class="btn btn-danger w-100" type="button">Eliminar</button>
-                                </div>
+                            <div class="col-6 col-md-2">
+                                <button class="btn btn-success w-100" type="button">Finalizada</button>
                             </div>
-
-                            <div class="row g-4 align-items-center mb-3">
-                                <div class="col-12 col-md-8">
-                                    <div class="card">
-                                        <h5 class="card-header">Tarea 3</h5>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Ir a la cita médica de control</h5>
-                                            <p class="card-text">Descripción: Asistir a la revisión anual con el médico general en la sede de la EPS<br>
-                                                Límite de realización: 15/11/2026.<br>
-                                                Estado: Pendiente
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-2">
-                                    <button class="btn btn-success w-100" type="button">Finalizada</button>
-                                </div>
-                                <div class="col-6 col-md-2">
-                                    <button class="btn btn-danger w-100" type="button">Eliminar</button>
-                                </div>
+                            <div class="col-6 col-md-2">
+                                <button class="btn btn-danger w-100" type="button">Eliminar</button>
                             </div>
-
-                            <div class="row g-4 align-items-center mb-3">
-                                <div class="col-12 col-md-8">
-                                    <div class="card">
-                                        <h5 class="card-header">Tarea 4</h5>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Entregar los pendientes en el trabajo</h5>
-                                            <p class="card-text">Descripción: Entregar los documentos pendientes al supervisor antes de la fecha límite.<br>
-                                                Límite de realización: 20/11/2026.<br>
-                                                Estado: En proceso
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-2">
-                                    <button class="btn btn-success w-100" type="button">Finalizada</button>
-                                </div>
-                                <div class="col-6 col-md-2">
-                                    <button class="btn btn-danger w-100" type="button">Eliminar</button>
-                                </div>
-                            </div>
-
-                            <div class="row g-4 align-items-center mb-3">
-                                <div class="col-12 col-md-8">
-                                    <div class="card">
-                                        <h5 class="card-header">Tarea 5</h5>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Avanzar en la lectura del libro</h5>
-                                            <p class="card-text">Descripción: Leer al menos 50 páginas del libro asignado.<br>
-                                                Límite de realización: 25/11/2026.<br>
-                                                Estado: Pendiente
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-2">
-                                    <button class="btn btn-success w-100" type="button">Finalizada</button>
-                                </div>
-                                <div class="col-6 col-md-2">
-                                    <button class="btn btn-danger w-100" type="button">Eliminar</button>
-                                </div>
-                            </div>
-
                         </div>
 
+                        <div class="row g-4 align-items-center mb-3">
+                            <div class="col-12 col-md-8">
+                                <div class="card">
+                                    <h5 class="card-header">Tarea 2</h5>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Pagar los servicios públicos</h5>
+                                        <p class="card-text">Descripción: Realizar el pago de la luz, el agua y el gas antes de la fecha de corte.<br>
+                                            Límite de realización: 10/11/2026.<br>
+                                            Estado: En proceso
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <button class="btn btn-success w-100" type="button">Finalizada</button>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <button class="btn btn-danger w-100" type="button">Eliminar</button>
+                            </div>
+                        </div>
+
+                        <div class="row g-4 align-items-center mb-3">
+                            <div class="col-12 col-md-8">
+                                <div class="card">
+                                    <h5 class="card-header">Tarea 3</h5>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Ir a la cita médica de control</h5>
+                                        <p class="card-text">Descripción: Asistir a la revisión anual con el médico general en la sede de la EPS<br>
+                                            Límite de realización: 15/11/2026.<br>
+                                            Estado: Pendiente
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <button class="btn btn-success w-100" type="button">Finalizada</button>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <button class="btn btn-danger w-100" type="button">Eliminar</button>
+                            </div>
+                        </div>
+
+                        <div class="row g-4 align-items-center mb-3">
+                            <div class="col-12 col-md-8">
+                                <div class="card">
+                                    <h5 class="card-header">Tarea 4</h5>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Entregar los pendientes en el trabajo</h5>
+                                        <p class="card-text">Descripción: Entregar los documentos pendientes al supervisor antes de la fecha límite.<br>
+                                            Límite de realización: 20/11/2026.<br>
+                                            Estado: En proceso
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <button class="btn btn-success w-100" type="button">Finalizada</button>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <button class="btn btn-danger w-100" type="button">Eliminar</button>
+                            </div>
+                        </div>
+
+                        <div class="row g-4 align-items-center mb-3">
+                            <div class="col-12 col-md-8">
+                                <div class="card">
+                                    <h5 class="card-header">Tarea 5</h5>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Avanzar en la lectura del libro</h5>
+                                        <p class="card-text">Descripción: Leer al menos 50 páginas del libro asignado.<br>
+                                            Límite de realización: 25/11/2026.<br>
+                                            Estado: Pendiente
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <button class="btn btn-success w-100" type="button">Finalizada</button>
+                            </div>
+                            <div class="col-6 col-md-2">
+                                <button class="btn btn-danger w-100" type="button">Eliminar</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
+            </div>
         </section>
-
     </main>
-
 </body>
-
 </html>
