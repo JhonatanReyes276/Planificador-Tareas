@@ -29,32 +29,48 @@
         <section id="planificador">
             <div class="row g-4">
                 <div class="col-12 col-lg-6">
-                    <article class="tarjeta tarjeta-form py-4 px-4">
-                        <fieldset class="bloque-form py-2">
-                            <legend class="titulo-bloque">Nueva tarea</legend>
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <label class="etiqueta-form" for="nombre">Nombre</label>
-                                    <input class="campo form-control" type="text" id="nombre" name="nombre"
-                                        placeholder="Tu nombre" required />
-                                </div>
-
-                                <div class="col-12">
-                                    <label class="etiqueta-form" for="descripcion">Descripción</label>
-                                    <input class="campo form-control" type="text" id="descripcion" name="descripcion"
-                                        placeholder="Contenido de la tarea" />
-                                </div>
-
-                                <div class="col-12">
-                                    <label class="etiqueta-form" for="email">Limite de realización</label>
-                                    <input class="campo form-control" type="number" id="limite" name="limite"
-                                        placeholder="Fecha de entrega de la tarea" required />
-                                </div>
+                    <form id="formulario" class="py-4 px-4" novalidate>
+                        <div class="mb-3">
+                            <h4 class="titulo-bloque">Nueva tarea</h4>
+                            <div id="alerta" class="alert alert-danger d-none alert-dismissible fade show" role="alert">
+                                <strong id="mensajeAlerta">Por favor, completa todos los campos correctamente.</strong>
+                                <button type="button" class="btn-close" onclick="ocultarAlerta()"></button>
                             </div>
-                        </fieldset>
+                            <div class="col-12">
+                                <label class="etiqueta-form" for="nombre">Nombre</label>
+                                <input class="campo form-control" type="text" id="nombre" name="nombre"
+                                    placeholder="Tu nombre" required />
+                            </div>
+                        </div>
 
-                        <button class="boton-agregar" type="submit">Agregar tarea</button>
-                    </article>
+                        <div class="mb-3">
+                            <div class="col-12">
+                                <label class="etiqueta-form" for="descripcion">Descripción</label>
+                                <input class="campo form-control" type="text" id="descripcion" name="descripcion"
+                                    placeholder="Contenido de la tarea" />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="col-12">
+                                <label class="etiqueta-form" for="limite">Limite de realización</label>
+                                <input class="campo form-control" type="date" id="limite" name="limite"
+                                    placeholder="Fecha de entrega de la tarea" required />
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="col-12">
+                                <label class="etiqueta-form" for="estado">Estado</label>
+                                <select class="campo form-control" id="estado">
+                                    <option value="">Seleccione un estado...</option>
+                                    <option value="Pendiente">Pendiente</option>
+                                    <option value="En proceso">En proceso</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Agregar tarea</button>
+                    </form>
 
                     <article class="container h-100">
                         <div class="container">
@@ -79,7 +95,8 @@
                                     <h5 class="card-header">Tarea 1</h5>
                                     <div class="card-body">
                                         <h5 class="card-title">Comprar el mercado</h5>
-                                        <p class="card-text">Descripción: No olvidar comprar las verduras y las proteinas para la semana.<br>
+                                        <p class="card-text">Descripción: No olvidar comprar las verduras y las
+                                            proteinas para la semana.<br>
                                             Límite de realización: 07/11/2026.<br>
                                             Estado: Pendiente
                                         </p>
@@ -100,7 +117,8 @@
                                     <h5 class="card-header">Tarea 2</h5>
                                     <div class="card-body">
                                         <h5 class="card-title">Pagar los servicios públicos</h5>
-                                        <p class="card-text">Descripción: Realizar el pago de la luz, el agua y el gas antes de la fecha de corte.<br>
+                                        <p class="card-text">Descripción: Realizar el pago de la luz, el agua y
+                                            el gas antes de la fecha de corte.<br>
                                             Límite de realización: 10/11/2026.<br>
                                             Estado: En proceso
                                         </p>
@@ -121,7 +139,8 @@
                                     <h5 class="card-header">Tarea 3</h5>
                                     <div class="card-body">
                                         <h5 class="card-title">Ir a la cita médica de control</h5>
-                                        <p class="card-text">Descripción: Asistir a la revisión anual con el médico general en la sede de la EPS<br>
+                                        <p class="card-text">Descripción: Asistir a la revisión anual con el
+                                            médico general en la sede de la EPS<br>
                                             Límite de realización: 15/11/2026.<br>
                                             Estado: Pendiente
                                         </p>
@@ -142,7 +161,8 @@
                                     <h5 class="card-header">Tarea 4</h5>
                                     <div class="card-body">
                                         <h5 class="card-title">Entregar los pendientes en el trabajo</h5>
-                                        <p class="card-text">Descripción: Entregar los documentos pendientes al supervisor antes de la fecha límite.<br>
+                                        <p class="card-text">Descripción: Entregar los documentos pendientes al
+                                            supervisor antes de la fecha límite.<br>
                                             Límite de realización: 20/11/2026.<br>
                                             Estado: En proceso
                                         </p>
@@ -163,7 +183,8 @@
                                     <h5 class="card-header">Tarea 5</h5>
                                     <div class="card-body">
                                         <h5 class="card-title">Avanzar en la lectura del libro</h5>
-                                        <p class="card-text">Descripción: Leer al menos 50 páginas del libro asignado.<br>
+                                        <p class="card-text">Descripción: Leer al menos 50 páginas del libro
+                                            asignado.<br>
                                             Límite de realización: 25/11/2026.<br>
                                             Estado: Pendiente
                                         </p>
@@ -182,5 +203,7 @@
             </div>
         </section>
     </main>
+    <script src="app.js"></script>
 </body>
+
 </html>
