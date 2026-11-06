@@ -1,0 +1,9 @@
+:root {
+    --gris: #33302C;
+}
+
+body {
+    background-color:var(--gris);
+    color: #fff;
+}
+
