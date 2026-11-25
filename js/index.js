@@ -1,6 +1,10 @@
 const taskManager = new TaskManager();
-
 const newTaskForm = document.getElementById("formulario");
+const listaTareas = document.querySelector('#tarjetas');
+
+document.addEventListener('DOMContentLoaded', () => {
+    taskManager.cargar();
+});
 
 newTaskForm.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -64,28 +68,16 @@ function ocultarAlerta() {
   alerta.classList.add('d-none');
 }
 
-const tareasEjemplo = new TaskManager();
-taskManager.addTask(
-  'Sacar la basura',
-  'Sacar la basura al frente de la casa',
-  '2026-12-20',
-  'POR HACER'
-);
+listaTareas.addEventListener('click', (event) => {
+    const deleteBtn = event.target.closest('.delete-button');
+    if (!deleteBtn) return;
 
-taskManager.addTask(
-  'Hacer de cenar',
-  'Preparar la cena para la familia',
-  '2026-11-27',
-  'POR HACER'
-);
+    const parentTask = deleteBtn.closest('.row[data-task-id]');
+    if (!parentTask) return;
 
-taskManager.addTask(
-  'Pagar los servicios públicos',
-  'Realizar el pago de la luz, el agua y el gas antes de la fecha de corte.',
-  '2026-12-01'
-)
+    const taskId = Number(deleteBtn.dataset.taskId || parentTask.dataset.taskId);
 
-console.log(taskManager.tasks);
-
-
+    taskManager.deleteTask(taskId);
+    parentTask.remove();
+});
 
