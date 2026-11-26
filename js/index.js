@@ -1,6 +1,7 @@
 const taskManager = new TaskManager();
 const newTaskForm = document.getElementById("formulario");
 const listaTareas = document.querySelector('#tarjetas');
+const listaFinalizadas = document.querySelector('#listaFinalizadas');
 
 document.addEventListener('DOMContentLoaded', () => {
     taskManager.cargar();
@@ -36,7 +37,6 @@ newTaskForm.addEventListener('submit', function (event) {
 });
 
 function validarFormulario(datos) {
-  const mensajeAlerta = document.querySelector('#mensajeAlerta');
   let mensajeError = "";
 
   if (datos.nombre === "") {
@@ -69,15 +69,48 @@ function ocultarAlerta() {
 }
 
 listaTareas.addEventListener('click', (event) => {
+    const doneBtn = event.target.closest('.done-button');
+    if (doneBtn) {
+        const parentTask = doneBtn.closest('[data-task-id]');
+        if (!parentTask) return;
+
+        const taskId = Number(parentTask.dataset.taskId);
+        const task = taskManager.getTaskById(taskId);
+
+        if (task) {
+            task.estado = 'FINALIZADA';
+            taskManager.guardar();
+            taskManager.render();
+        }
+        return;
+    }
+
     const deleteBtn = event.target.closest('.delete-button');
     if (!deleteBtn) return;
 
-    const parentTask = deleteBtn.closest('.row[data-task-id]');
+    const parentTask = deleteBtn.closest('[data-task-id]');
     if (!parentTask) return;
 
     const taskId = Number(deleteBtn.dataset.taskId || parentTask.dataset.taskId);
-
     taskManager.deleteTask(taskId);
-    parentTask.remove();
 });
+
+if (listaFinalizadas) {
+    listaFinalizadas.addEventListener('click', (event) => {
+        const reopenBtn = event.target.closest('.reopen-button');
+        if (!reopenBtn) return;
+
+        const parentTask = reopenBtn.closest('[data-task-id]');
+        if (!parentTask) return;
+
+        const taskId = Number(parentTask.dataset.taskId);
+        const task = taskManager.getTaskById(taskId);
+
+        if (task) {
+            task.estado = 'POR HACER';
+            taskManager.guardar();
+            taskManager.render();
+        }
+    });
+}
 
